@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hblib.demoforspring.mapper.UserDOMapper">
+    <select id="findByName" resultType="com.hblib.demoforspring.pojo.UserDO">
+        select id,
+               username,
+               password,
+               create_time as createTime
+        from user
+        where username = #{name}
+    </select>
+
+    <select id="findById" resultType="com.hblib.demoforspring.pojo.UserDO">
+        select id,
+               username,
+               password,
+               create_time as createTime
+        from user
+        where id = #{id}
+    </select>
+
+
+</mapper>
